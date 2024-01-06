@@ -1,0 +1,8 @@
+.sortBox{
+    :where(.css-dev-only-do-not-override-p7e5j5).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+        border: 1px solid #5dcaf9 !important;
+    }
+    .ant-select-focused:where(.css-dev-only-do-not-override-p7e5j5).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector{
+        border: 1px solid #5dcaf9 !important;
+    }
+}

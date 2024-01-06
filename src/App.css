@@ -1,38 +1,322 @@
-.App {
-  text-align: center;
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: https://meyerweb.com
+	HTML5 Doctor				:: https://html5doctor.com
+	and the HTML5 Boilerplate	:: https://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+	font-family: 'Roboto', sans-serif !important;
+}
+.ant-layout{
+	background: #fff !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements:
+   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {max-width: 100%;}
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+button:focus-visible{
+	outline: none !important;
+}
+
+body .title-text{
+	margin-bottom: 1.875rem;
+    color: #182642;
+    font-size: 1.875rem;
+    font-weight: 700;
+	font-family: 'Roboto', sans-serif !important;
+}
+.cb-section {
+    padding: 60px 0;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}
+a:hover{
+	color: #000;
+}
+.dir-line{
+	border-top: 1px solid #5dcaf9;
+	
+	padding: 5px 0px;
+}
+
+:where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-disabled .ant-pagination-item-link, :where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link{
+	display: none;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-prev .ant-pagination-item-link, :where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-next .ant-pagination-item-link{
+	border-radius: 50%;
+	background: #f5f5f5;
+	transition: none;
+	color: #3e3e3e !important;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-item{
+	background: #fff;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	color: #5d677a !important;
+	transition: none !important;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-item:hover , :where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-item:active{
+	background-color: #5dcaf9 !important;
+	color: #fff !important;
+	border: 1px solid #5dcaf9;
+	
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-pagination .ant-pagination-item-active{
+	background: #5dcaf9;
+	color: #fff;
+	font-weight: normal;
+	border: 1px solid #5dcaf9;
+	color: #fff !important;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+	color: #5dcaf9;
+	font-size: 25px;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-tabs .ant-tabs-tab-btn{
+	font-size: 25px;
+}
+:where(.css-dev-only-do-not-override-p7e5j5).ant-tabs-top >.ant-tabs-nav .ant-tabs-ink-bar, :where(.css-dev-only-do-not-override-p7e5j5).ant-tabs-top >div>.ant-tabs-nav .ant-tabs-ink-bar{
+	background:#5dcaf9 ;
+} 
+.button-delete , .button-edit , .button-eye{
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	padding: 5px;
+	font-size: 25px;
+	cursor: pointer;
+	background: #ffffff;
+	border-radius: 10px;
+}
+.button-delete-role , .button-edit-role , .button-eye-role{
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	padding: 5px;
+	font-size: 19px;
+	cursor: pointer;
+	background: #ffffff;
+	border-radius: 10px;
+}
+
+.button-delete:hover , .button-edit:hover , .button-eye:hover , .button-delete-role:hover , .button-edit-role:hover , .button-eye-role:hover{
+	background: #e7e7e7;
+}
+body .button-edit , .button-edit-role{
+	color: rgb(0 140 234);
+	
+}
+body .button-delete , .button-delete-role{
+	color: #cb0707;
+
+	
+}
+body .button-eye , .button-eye-role{
+	color: #c05d00;
+}
+
+body .button-delete-multi{
+	color: #db2222;
+	font-size: 20px;
+	padding: 3px;
+	cursor: pointer;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+	
+    background-color: #fafafa;
+	border-bottom: 1px solid #00b3ff54;
+}
+.title-header{
+	font-size: 17px;
+	color: #252525;
+	padding: 10px 0;
+	line-height: 1.2;
+	display: inline;
+	padding: 5px;
+	border-radius: 5px;
+	
+}
+.title-header i{
+	font-family: 'Roboto', sans-serif !important;
+	font-weight: 500;
+	
+}
+.box-card{
+	overflow: hidden;
+	border: 1px solid #00b3ff54;
+    border-radius: 10px;
+   
+
+}
+.button-submit-admin{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border: none;
+	color: #fff;
+	background: #5dcaf9;
+	border-radius: 5px;
+	font-weight: 600;
+}
+.button-submit-admin:hover{
+	background: #35b9f1;
+}
+body .tox-statusbar{
+	display: none !important;
+}
+.title-main-admin{
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+	background-color: #35b9f1 ; 
+	border-color: #35b9f1 ;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  :where(.css-dev-only-do-not-override-p7e5j5).ant-checkbox-disabled .ant-checkbox-inner{
+	  background: #f5f5f5;
+	  border-color: #f5f5f5;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
