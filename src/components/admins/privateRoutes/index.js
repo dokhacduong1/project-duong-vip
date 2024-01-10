@@ -3,7 +3,7 @@ import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
-import { authenticationAdmin, infoUserAdmin } from "../../../stores/admins/actions/auth";
+import { authenticationAdmin } from "../../../stores/admins/actions/auth";
 import { useDispatch } from "react-redux";
 import { deleteAllCookies} from "../../../helpers/cookie";
 import { CheckAuthAdmin } from "../../../helpers/checkAuthAdmin";

@@ -320,3 +320,6 @@ body .tox-statusbar{
 	  background: #f5f5f5;
 	  border-color: #f5f5f5;
   }
+  .ReactMapGL{
+	border-radius: 10px !important;
+  }

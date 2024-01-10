@@ -1,7 +1,7 @@
 import { Radio, Input } from "antd";
 import "./filterBox.scss"
 function FilterBox(props) {
-    const { handleChange, handleSearch, optionsFilter } = props
+    const { handleChange, handleSearch, optionsFilter } = props;
     const { Search } = Input;
 
     return (

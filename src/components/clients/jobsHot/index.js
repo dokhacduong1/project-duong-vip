@@ -108,7 +108,7 @@ function JobsHot() {
                                                             <h2 >{dataMap.title}</h2>
                                                             <h3 className="mt-1">Bảo Mật</h3>
                                                             <h4 className="mt-1">Lương: {dataMap.salary}</h4>
-                                                            <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> {dataMap.address}</h5>
+                                                            <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> </h5>
                                                         </div>
                                                         <div className="job__item-box-icon">
                                                             <span className="top">TOP</span>
@@ -154,7 +154,7 @@ function JobsHot() {
                                                             <h2 >{dataMap.title}</h2>
                                                             <h3 className="mt-1">Bảo Mật</h3>
                                                             <h4 className="mt-1">Lương: {dataMap.salary}</h4>
-                                                            <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> {dataMap.address}</h5>
+                                                            <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> </h5>
                                                         </div>
                                                         <div className="job__item-box-icon">
                                                             <span className="salary">Mới</span>
@@ -201,7 +201,7 @@ function JobsHot() {
                                                             <h2 >{dataMap.title}</h2>
                                                             <h3 className="mt-1">Bảo Mật</h3>
                                                             <h4 className="mt-1">Lương: {dataMap.salary}</h4>
-                                                            <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> {dataMap.address}</h5>
+                                                            <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> </h5>
                                                         </div>
                                                         <div className="job__item-box-icon">
                                                             <span className="level">HOT</span>

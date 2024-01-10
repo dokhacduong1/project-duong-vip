@@ -17,7 +17,6 @@ export const getTreeCategories = async ()=>{
     return result;
 }
 export const getAllJobsCategories = async (valueStatus = "",keyword="",sortKey="",sortValue ="",tree ="false")=>{
-    console.log(valueStatus)
     const result = await AuthGet(`/job-categories?findAll=true&status=${valueStatus}&keyword=${keyword}&sortKey=${sortKey}&sortValue=${sortValue}&tree=${tree}`,token);
     return result;
 }

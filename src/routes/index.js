@@ -11,6 +11,7 @@ import Home from "../pages/clients/home/index";
 import AddGroupPermission from "../pages/admins/addGroupPermission";
 import ManagementGroupPermission from "../pages/admins/managementGroupPermission";
 import SetPermission from "../pages/admins/setPermission";
+import AddJobs from "../pages/admins/addJobs";
 
 
 
@@ -33,7 +34,7 @@ export const routes = [
     children: [
       {
         element: <CheckRoutes />,
-        children:[
+        children: [
           {
             path: "login",
             element: <LoginAdmin />,
@@ -48,13 +49,22 @@ export const routes = [
             index: true,
             element: <DashBoard />,
           },
-          //Danh mục
+          //Danh mục công việc
           {
             path: "add-categories",
             element: <AddCategories />
           },
           {
             path: "management-categories",
+            element: <ManagementCategories />
+          },
+          //Quản lý công việc
+          {
+            path: "add-jobs",
+            element: <AddJobs />
+          },
+          {
+            path: "management-jobs",
             element: <ManagementCategories />
           },
           //Quyền
@@ -70,7 +80,7 @@ export const routes = [
             path: "set-permission",
             element: <SetPermission />
           }
-          
+
         ]
       },
 

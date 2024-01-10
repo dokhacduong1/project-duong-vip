@@ -70,7 +70,7 @@ function JobsOccupation() {
                                                     <h2 >{dataMapOne.title}</h2>
                                                     <h3 className="mt-1">{dataMapOne.employerId.companyName}</h3>
                                                     <h4 className="mt-1">Lương: {dataMapOne.salary}</h4>
-                                                    <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> {dataMapOne.address}</h5>
+                                                    <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> </h5>
                                                 </div>
                                             </div>
                                         ))
@@ -99,7 +99,7 @@ function JobsOccupation() {
                                                     <h2 >{dataMapOne.title}</h2>
                                                     <h3 className="mt-1">{dataMapOne.employerId.companyName}</h3>
                                                     <h4 className="mt-1">Lương: {dataMapOne.salary}</h4>
-                                                    <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> {dataMapOne.address}</h5>
+                                                    <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> </h5>
                                                 </div>
                                             </div>
                                         ))
@@ -128,7 +128,7 @@ function JobsOccupation() {
                                                     <h2 >{dataMapOne.title}</h2>
                                                     <h3 className="mt-1">{dataMapOne.employerId.companyName}</h3>
                                                     <h4 className="mt-1">Lương: {dataMapOne.salary}</h4>
-                                                    <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> {dataMapOne.address}</h5>
+                                                    <h5 className="mt-1 "><FontAwesomeIcon icon={faLocationDot} /> </h5>
                                                 </div>
                                             </div>
                                         ))

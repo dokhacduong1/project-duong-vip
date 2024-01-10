@@ -6,7 +6,7 @@ export const fetchApiCategorieManage = async (setJobsCategories, valueStatus = "
     //Cái valueStatus nếu người dùng muốn lọc theo status thì điền giá trị vào mặc định là 1
     //Nếu có tree thì nó mới tạo ra một cây không thì thôi
     const records = await getAllJobsCategories(valueStatus, keyword, sortKey, sortValue,tree);
-    console.log(records)
+   
     if (records.code === 200) {
         const convertData = decData(records.data).map((dataMap, index) => ({
             ...dataMap,

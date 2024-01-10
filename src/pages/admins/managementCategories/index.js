@@ -105,7 +105,7 @@ function ManagementCategories() {
 
             render: (_, record) => (
                 <Space size="small">
-                    
+
                     {
                         //Kiểm tra xem người dùng có quyền edit hay không
                         userAdmin?.status && userAdmin.infoUser.permissions.includes('job-categories-edit') === true && (
@@ -133,10 +133,17 @@ function ManagementCategories() {
                         )
                     }
 
+                    {
+                        //Kiểm tra xem người dùng có quyền xem hay không
+                        userAdmin?.status && userAdmin.infoUser.permissions.includes('job-categories-delete') === true && (
+                            <>
+                                <span className="button-eye">
+                                    <EyeOutlined />
+                                </span>
+                            </>
+                        )
+                    }
 
-                    <span className="button-eye">
-                        <EyeOutlined />
-                    </span>
 
                 </Space>
             ),
@@ -202,7 +209,6 @@ function ManagementCategories() {
     //Hàm này cho người dùng lọc những sản phẩm theo status
     const handleChangeStatus = async (value) => {
         const valueStatus = value.target.value
-        console.log(valueStatus)
         fetchApiCategorieManage(setJobsCategories, valueStatus, keywords, sortKey, sortValue, tree);
         setStatus(valueStatus)
     }
@@ -252,16 +258,24 @@ function ManagementCategories() {
                     <h2 className="title-header"><i>Danh Mục Công Việc</i></h2>
                 </div>
                 <div className="managementCategories__body card-body mt-2">
-                    {/* Đoạn này là khối tìm kiếm */}
-                    <ChangeMultipleBox
-                        checkActiveButton={listDeleteId.length > 0 ? false : true}
-                        options={optionsChangeMultiple}
-                        handleSubmit={handleSubmitChangeMultiple}
-                    />
-                    {/* Hết khối tìm kiếm */}
+                    {/* Đoạn này là khối thực hiện nhiều hành động */}
+                    {
+                        //Kiểm tra xem người dùng có quyền edit hay không
+                        userAdmin?.status && userAdmin.infoUser.permissions.includes('job-categories-edit') === true && (
+                            <>
+                                <ChangeMultipleBox
+                                    checkActiveButton={listDeleteId.length > 0 ? false : true}
+                                    options={optionsChangeMultiple}
+                                    handleSubmit={handleSubmitChangeMultiple}
+                                />
+                            </>
+                        )
+                    }
+                    {/* Hết khối thực hiện nhiều hành động */}
+
+
 
                     {/* Đoạn này về table */}
-
                     <Table
                         pagination={{
                             pageSize: 7,
